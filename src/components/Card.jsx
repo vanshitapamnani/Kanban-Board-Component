@@ -1,6 +1,5 @@
 import "../styles/card.css";
 import { useState } from "react";
-
 import { useDraggable } from "@dnd-kit/core";
 
 export default function Card({ text, onDelete, id, column, updateCard }) {
@@ -8,11 +7,11 @@ export default function Card({ text, onDelete, id, column, updateCard }) {
     id: id,
     data: { column },
   });
+
   const style = transform
-    ? {
-        transform: `translate(${transform.x}px , ${transform.y}px)`,
-      }
+    ? { transform: `translate(${transform.x}px , ${transform.y}px)` }
     : undefined;
+
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(text);
 
@@ -21,11 +20,13 @@ export default function Card({ text, onDelete, id, column, updateCard }) {
     updateCard(column, id, value);
     setEdit(false);
   }
+
   return (
     <div ref={setNodeRef} style={style} className="card">
       <span className="dragHandle" {...listeners} {...attributes}>
         ☰
       </span>
+
       {edit ? (
         <input
           className="editInput"
@@ -40,7 +41,6 @@ export default function Card({ text, onDelete, id, column, updateCard }) {
         </span>
       )}
 
-      <span>{text}</span>
       <button className="deleteBtn" onClick={onDelete}>
         🗑️
       </button>
