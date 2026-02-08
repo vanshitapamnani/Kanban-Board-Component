@@ -1,7 +1,6 @@
 import "../styles/card.css";
 import { useState } from "react";
 import { useDraggable } from "@dnd-kit/core";
-import { CSS } from "@dnd-kit/utilities";
 
 export default function Card({ text, onDelete, id, column, updateCard }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -9,7 +8,9 @@ export default function Card({ text, onDelete, id, column, updateCard }) {
     data: { column },
   });
 
-  const style = { transform: CSS.Transform.toString(transform) };
+  const style = transform
+    ? { transform: `translate(${transform.x}px , ${transform.y}px)` }
+    : undefined;
 
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(text);

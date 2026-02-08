@@ -40,8 +40,9 @@ export default function Column({
           + Add Card
         </button>
       )}
-      {cards &&
-        cards.map((card) => (
+      {(cards || [])
+        .filter((card) => card && card.id && card.text)
+        .map((card) => (
           <Card
             key={card.id}
             id={card.id}
