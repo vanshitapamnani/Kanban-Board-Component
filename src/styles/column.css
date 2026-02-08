@@ -1,0 +1,60 @@
+.column-header {
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.column {
+  background: #e2e4e6;
+  padding: 10px;
+  width: 300px;
+  border-radius: 8px;
+}
+
+.todo {
+  background: #1e88e5;
+}
+
+.inProgress {
+  background: #fb8c00;
+}
+.done {
+  background: #43a047;
+}
+
+.addBtn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .column {
+    width: 95%;
+  }
+}
+
+.addCardBox {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.addCardBox input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.addCardBox button {
+  padding: 8px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
